@@ -27,13 +27,18 @@ class Server {
 
     this.clients = [];
     this.rooms = [];
-    this.connectingClients = [];
 
     console.log('Server setup and listening.'.green);
   }
 
+  /**
+   * Setup the socket on connection
+   */
   onConnection() {
     this.io.on('connection', (socket) => {
+      /**
+       * Create the identify event
+       */
       socket.on('identify', (data) => {
         if(this.checkIdentifierInUse(data.identifier)) {
           socket.emit('identifierInUse');
@@ -58,14 +63,23 @@ class Server {
         socket.c = newClient;
       });
 
+      /**
+       * Create the 'send' event
+       */
       socket.on('send', (data) => {
         socket.c.room.sendAll(socket.c.identifier, data);
       });
 
+      /**
+       * Create the 'disconnect' event
+       */
       socket.on('disconnect', () => {
-        socket.c.room.disconnect(socket.c);
+        if(socket.c) {
+          socket.c.room.disconnect(socket.c);
 
-        this.clients.splice(this.clients.findIndex(x => x.identifier === socket.c.identifier), 1);
+          this.clients.splice(this.clients.findIndex(x => x.identifier === socket.c.identifier), 1);
+        }
+
         socket.disconnect();
 
         console.log('Client disconnected.');
@@ -73,6 +87,10 @@ class Server {
     });
   }
 
+  /**
+   * Checks to see if a room needs to be created
+   * @param room
+   */
   maybeCreateRoom(room) {
     console.log('The room name is', room);
 
@@ -89,6 +107,11 @@ class Server {
     }
   }
 
+  /**
+   * Checks if an identifier is in use
+   * @param identifier
+   * @returns {boolean}
+   */
   checkIdentifierInUse(identifier) {
     const index = this.clients.findIndex(x => x.identifier === identifier);
 
