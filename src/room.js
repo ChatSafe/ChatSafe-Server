@@ -64,12 +64,9 @@ class Room {
    * @param client
    */
   disconnect(client) {
-    for(let c of this.clients) {
-      if(client.identifier === c.identifier)
-        continue;
+    this.emitAll('lostClient', client.identifier, client.identifier);
 
-      c.socket.emit('lostClient', client.identifier);
-    }
+    console.log(client);
 
     this.clients.splice(this.clients.findIndex(x => x.identifier === client.identifier), 1);
   }

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa6b171c-9630-40be-8b61-7c20207a9f43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/room.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="559">
+              <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding>
                 <element signature="n#!!block;n#maybeCreateRoom#0;n#Server#0" />
               </folding>
@@ -42,10 +40,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="561">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#Room#0" />
+                <element signature="n#!!block;n#addClient#0;n#Room#0" />
+                <element signature="n#!!block;n#sendAll#0;n#Room#0" />
               </folding>
             </state>
           </provider>
@@ -74,11 +74,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/src/room.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/client.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/server.js" />
+        <option value="$PROJECT_DIR$/src/room.js" />
       </list>
     </option>
   </component>
@@ -101,6 +101,11 @@
             <path>
               <item name="ChatSafe-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatSafe-Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChatSafe-Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChatSafe-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,12 +147,12 @@
       <option name="presentableId" value="Default" />
       <updated>1543788110090</updated>
       <workItem from="1543788111220" duration="19946000" />
-      <workItem from="1543862144020" duration="2568000" />
+      <workItem from="1543862144020" duration="5666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22514000" />
+    <option name="totallyTimeSpent" value="25612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="245" y="35" width="1400" height="1000" extended-state="0" />
@@ -197,16 +202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Room#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -221,10 +216,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Room#0" />
+            <element signature="n#!!block;n#addClient#0;n#Room#0" />
+            <element signature="n#!!block;n#sendAll#0;n#Room#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="559">
+          <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
           <folding>
             <element signature="n#!!block;n#maybeCreateRoom#0;n#Server#0" />
           </folding>
